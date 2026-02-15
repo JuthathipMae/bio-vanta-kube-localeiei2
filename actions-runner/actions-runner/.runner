@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "JUTHATHIP",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus2.actions.githubusercontent.com/jOqMsT0rv3hL313qWXUJUGGfGTig2Okb22GKS85K1NnuojTVms/",
+  "gitHubUrl": "https://github.com/JuthathipMae/bio-vanta-kube-localeiei2",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
