@@ -6,25 +6,22 @@ on:
 
 jobs:
   deploy:
+    # สำคัญมาก! บรรทัดนี้บอกให้รันบนเครื่องเรา ไม่ใช่ Cloud
     runs-on: self-hosted
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4 # แนะนำให้ใช้ v4 เป็นตัวล่าสุดครับ
+    - uses: actions/checkout@v3
 
-    - name: Check K8s Connection
-      run: |
-        kubectl cluster-info
-        kubectl get nodes
+    # - name: Build Docker Image
+    #   run: |
+    #     docker build -t my-app:latest .
+    #     # ใน Local K8s ไม่ต้อง push ขึ้น Registry ก็ได้ ถ้าใช้ imagePullPolicy: Never
 
     - name: Update Kubernetes
       run: |
-        # ตรวจสอบว่ามีไฟล์ deployment-v2.yaml อยู่จริงไหมก่อนรัน
+        # คำสั่งนี้จะรันบนเครื่องเราโดยตรง จึงใช้ kubectl ได้เลย
         kubectl apply -f deployment-v2.yaml
-        # restart deployment เพื่อให้ดึงค่าใหม่เสมอ
-        kubectl rollout restart deployment/my-web-deployment
+        kubectl rollout restart deployment/bio-web-deployment
         
-    - name: Verify Pods
-      run: |
-        echo "Waiting for pods to be ready..."
-        kubectl get pods -w --timeout=30s | Select-Object -First 10 # สำหรับ PowerShell
+    - name: Verify
+      run: kubectl get pods
