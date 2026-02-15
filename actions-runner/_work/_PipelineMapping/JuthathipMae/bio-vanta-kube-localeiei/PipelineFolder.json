@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "JuthathipMae/bio-vanta-kube-localeiei",
+  "pipelineDirectory": "bio-vanta-kube-localeiei",
+  "workspaceDirectory": "bio-vanta-kube-localeiei\\bio-vanta-kube-localeiei",
+  "repositories": {
+    "JuthathipMae/bio-vanta-kube-localeiei": {
+      "repositoryPath": "bio-vanta-kube-localeiei\\bio-vanta-kube-localeiei",
+      "lastRunOn": "02/15/2026 16:53:43 +07:00"
+    }
+  },
+  "lastRunOn": "02/15/2026 16:53:43 +07:00"
+}
