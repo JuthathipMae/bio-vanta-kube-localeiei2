@@ -6,21 +6,17 @@ on:
 
 jobs:
   deploy:
-    # สำคัญมาก! บรรทัดนี้บอกให้รันบนเครื่องเรา ไม่ใช่ Cloud
     runs-on: self-hosted
 
     steps:
-    - uses: actions/checkout@v3
-
-    # - name: Build Docker Image
-    #   run: |
-    #     docker build -t my-app:latest .
-    #     # ใน Local K8s ไม่ต้อง push ขึ้น Registry ก็ได้ ถ้าใช้ imagePullPolicy: Never
+    - name: Checkout code
+      uses: actions/checkout@v4
 
     - name: Update Kubernetes
       run: |
-        # คำสั่งนี้จะรันบนเครื่องเราโดยตรง จึงใช้ kubectl ได้เลย
+        # สั่งให้ K8s อัปเดตไฟล์คอนฟิก
         kubectl apply -f deployment-v2.yaml
+        # สั่ง restart เพื่อให้ดึง Image ล่าสุดมาใช้ (ชื่อต้องตรงกับในไฟล์ deployment-v2.yaml)
         kubectl rollout restart deployment/bio-web-deployment
         
     - name: Verify
