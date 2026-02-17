@@ -3,8 +3,8 @@
   "agentName": "JUTHATHIP",
   "poolId": 1,
   "poolName": "Default",
-  "serverUrl": "https://pipelinesghubeus11.actions.githubusercontent.com/C1lL74rrVgd5dOlSnegXG0VJYnlpk4rMd8FA2h5elBG46E6DJg/",
-  "gitHubUrl": "https://github.com/JuthathipMae/bio-vanta-kube-localeiei",
+  "serverUrl": "https://pipelinesghubeus2.actions.githubusercontent.com/jOqMsT0rv3hL313qWXUJUGGfGTig2Okb22GKS85K1NnuojTVms/",
+  "gitHubUrl": "https://github.com/JuthathipMae/bio-vanta-kube-localeiei2",
   "workFolder": "_work",
   "useV2Flow": true,
   "serverUrlV2": "https://broker.actions.githubusercontent.com/"
